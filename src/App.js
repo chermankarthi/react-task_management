@@ -29,6 +29,7 @@ const App = () => {
   const handleEdit = (item) => {
     setEditTaskId(item.id);
     setTaskDescription("");
+    setUpdateTaskDescription(item.taskDescription)
   };
   const handleUpdateTaskDescription = (data) => {
     setUpdateTaskDescription(data.target.value);
@@ -108,6 +109,7 @@ const App = () => {
               <input
                 autoFocus
                 type="text"
+                value={updateTaskDescription}
                 onChange={(e) => handleUpdateTaskDescription(e)}
                 className="border-inherit border-2 rounded-md outline-blue-500  px-1 md:px-2 md:py-1 mr-2 md:mr-5 w-2/4"
               ></input>
